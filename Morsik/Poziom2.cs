@@ -55,7 +55,7 @@ namespace Morsik
                     pictureBox2.Location = new Point(316, 747);
                 }
             }
-
+        }
 
         private void Poziom2_FormClosing(object sender, FormClosingEventArgs e)
         {
