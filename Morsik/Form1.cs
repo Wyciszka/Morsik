@@ -47,66 +47,6 @@ namespace Morsik
                     pictureBox2.Location = new Point(283, 203);
                 }
             }
-
-            //sprawdzanie kolejnosci ulozenia slowa
-            if (pictureBox3.Visible == true && pictureBox2.Bounds.IntersectsWith(pictureBox3.Bounds) && i == 0)
-            {
-                pictureBox3.Visible = false;
-                tab[0] = 1;
-                i++;
-
-            }
-            else if (pictureBox3.Visible == true && pictureBox2.Bounds.IntersectsWith(pictureBox3.Bounds))
-            {
-                pictureBox3.Visible = false;
-                i = 3;
-            }
-
-            if (pictureBox4.Visible == true && pictureBox2.Bounds.IntersectsWith(pictureBox4.Bounds) && i == 1)
-            {
-                pictureBox4.Visible = false;
-                tab[1] = 2;
-                i++;
-
-            }
-            else if (pictureBox4.Visible == true && pictureBox2.Bounds.IntersectsWith(pictureBox4.Bounds))
-            {
-                pictureBox4.Visible = false;
-                i = 3;
-            }
-
-            if (pictureBox5.Visible == true && pictureBox2.Bounds.IntersectsWith(pictureBox5.Bounds) && i == 2)
-            {
-                pictureBox5.Visible = false;
-                tab[2] = 3;
-            }
-            else if (pictureBox5.Visible == true && pictureBox2.Bounds.IntersectsWith(pictureBox5.Bounds))
-            {
-                pictureBox5.Visible = false;
-                i = 3;
-            }
-
-            //koniec poziomu
-            if (pictureBox2.Bounds.IntersectsWith(pictureBox1.Bounds) && tab.SequenceEqual(wygrana))
-            {
-                MessageBox.Show("Gratulacje! Przechodzisz do nastepnego poziomu");
-                Poziom2 nowy = new Poziom2();
-                this.Hide();
-                nowy.Show();
-            }
-            else if (pictureBox2.Bounds.IntersectsWith(pictureBox1.Bounds))
-            {
-                MessageBox.Show("Niestety, sprobuj jescze raz!");
-                i = 0;
-                for (int i = 0; i < 3; i++)
-                {
-                    tab[i] = 0;
-                }
-                pictureBox2.Location = new Point(283, 203);
-                pictureBox3.Visible = true;
-                pictureBox4.Visible = true;
-                pictureBox5.Visible = true;
-            }
         }
 
         private void Menu_Click(object sender, EventArgs e)
